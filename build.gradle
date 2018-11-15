@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven' //发布到JitPack
+group='com.github.LianjiaTech' //发布到JitPack
+
+repositories {
+  mavenCentral()
+}
+
+android {
+  compileSdkVersion 26
+
+  defaultConfig {
+    minSdkVersion 15
+    targetSdkVersion 26
+    versionCode 100
+    versionName "1.0.0"
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+  compileOnly 'com.google.code.gson:gson:2.8.5'
+}
+
