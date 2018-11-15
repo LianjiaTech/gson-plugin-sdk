@@ -1,1 +1,10 @@
-/build
+build
+gson_sdk/build
+gson_sdk/gson_sdk.iml
+gson-plugin-sdk.iml
+gradlew.bat
+gradlew
+gradle
+local.properties
+.gradle
+.idea

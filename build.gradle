@@ -1,30 +1,30 @@
-apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven' //发布到JitPack
-group='com.github.LianjiaTech' //发布到JitPack
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
 
-repositories {
-  mavenCentral()
-}
-
-android {
-  compileSdkVersion 26
-
-  defaultConfig {
-    minSdkVersion 15
-    targetSdkVersion 26
-    versionCode 100
-    versionName "1.0.0"
-  }
-
-  buildTypes {
-    release {
-      minifyEnabled false
-      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
     }
-  }
+    configurations.all {
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5' //发布工程到JitPack
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
 }
 
-dependencies {
-  compileOnly 'com.google.code.gson:gson:2.8.5'
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
 }
 
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
